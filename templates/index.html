@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Custom URL Shortener</title>
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/coming-soon.min.css') }}">
+ </head>
+
+  <body>
+
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{{ url_for('static',filename='video/hack.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="masthead">
+      <div class="masthead-bg"></div>
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 my-auto">
+            <div class="masthead-content text-white py-5 py-md-0">
+              <h2 class="mb-3">Custom URL Shortener</h2>
+              <p class="mb-5">This is a College Project work!</p>
+              <p>Done by: </p>
+              <p>Hariprasath, Nithyapriyaa, Pavithra Shri</p>
+
+              
+
+              <form method="post" action="/">
+              <div class="input-group input-group-newsletter">                
+                <input type="url" class="form-control" name="url" placeholder="Enter URL to be shortened... copy only the part after http://nph.com/ " aria-label="Enter URL to be shortened... copy only the part after http://nph.com/" aria-describedby="basic-addon">
+
+                  <button class="btn btn-secondary" type="submit">Shorten Me!</button>
+
+              </div>
+              </form>
+                   {% if defered is defined %}
+                   <textarea autocomplete="nope" style="resize:none;font-size: 15px;" class="form-control" rows="1" id="comment">{{ defered }}</textarea>
+                  {% endif %}
+                  <p class="mb-5">copy only the part after http://nph.com/ and paste it after localhost:8080/</p>
+                  <p>Example: http://nph.com/deferme?key=5c080f2f</p>
+                  <p>Use: http://localhost:8080/deferme?key=5c080f2f</p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <ul class="list-unstyled text-center mb-0">
+        <li class="list-unstyled-item">
+          <a href="https://twitter.com/hpchucky" target="_blank">
+            <img width=100px class="img-fluid d-block mx-auto"   src="{{url_for('static', filename='images/twitter.png')}}" alt="" />
+          </a>
+        </li>
+        <li class="list-unstyled-item">
+          <a href="https://www.linkedin.com/in/hariprasath-tamilarasan-604774191/" target="_blank">
+            <img width=100px class="img-fluid d-block mx-auto"   src="{{url_for('static', filename='images/linkedin.png')}}" alt="" />            
+          </a>
+        </li>
+        <li class="list-unstyled-item">
+          <a href="https://github.com/hpchuck" target="_blank">
+            <img width=100px class="img-fluid d-block mx-auto"   src="{{url_for('static', filename='images/github.png')}}" alt="" />            
+          </a>
+        </li>
+        <li class="list-unstyled-item">
+          <a href="https://www.youtube.com/channel/UC_2D36mdcUIDb53agFNsQiA?view_as=subscriber" target="_blank">
+            <img width=100px class="img-fluid d-block mx-auto"   src="{{url_for('static', filename='images/ytube.png')}}" alt="" />            
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </body>
+
+</html>
